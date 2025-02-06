@@ -1,12 +1,12 @@
 "use client";
 
-import styles from "./ButtonLogout.module.css";
+import styles from "./GoogleAuthButton.module.css";
 
 import { signIn } from "next-auth/react";
 
 import { FcGoogle } from "react-icons/fc";
 
-const ButtonLogout = () => {
+const GoogleAuthButton = () => {
   return (
     <button
       className={styles.container}
@@ -18,4 +18,4 @@ const ButtonLogout = () => {
   );
 };
 
-export default ButtonLogout;
+export default GoogleAuthButton;

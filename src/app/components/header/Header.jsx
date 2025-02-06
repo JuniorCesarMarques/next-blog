@@ -32,8 +32,11 @@ const Header = ({ session }) => {
       animate={{ height: isOpen ? "200px" : "90px" }}
       transition={{ duration: isOpen ? 0.2 : 0.7, ease: "easeInOut" }}
     >
-      {image && <img src={image} alt="foto do perfil" />}
-      <Navbar handleMenuToggle={handleMenuToggle} isOpen={isOpen} />
+      <Navbar
+        handleMenuToggle={handleMenuToggle}
+        isOpen={isOpen}
+        session={session}
+      />
     </motion.header>
   );
 };

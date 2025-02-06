@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Navbar.module.css";
 
 import { IoMenuSharp } from "react-icons/io5";
@@ -7,11 +9,15 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-const Navbar = ({ handleMenuToggle, isOpen }) => {
+import { signOut } from "next-auth/react";
+
+const Navbar = ({ handleMenuToggle, isOpen, session }) => {
+  const { image } = session?.user || {};
 
   return (
     <nav className={styles.container}>
       <div className={styles.logo_container}>
+        <img src={image} alt="foto do perfil" />
         <span>Brothers</span>
       </div>
 
@@ -28,14 +34,25 @@ const Navbar = ({ handleMenuToggle, isOpen }) => {
       </ul>
 
       <ul className={styles.auth_menu}>
-        <li>
-          <Link href="register">Criar conta</Link>
-        </li>
+        {session === null && (
+          <li className={styles.auth_button}>
+            <Link href="register">Criar conta</Link>
+          </li>
+        )}
 
-        <li className={styles.login_button}>
-          <Link href="login">Entrar</Link>
-          <FaArrowRight />
-        </li>
+        {session === null ? (
+          <li className={styles.auth_button}>
+            <Link href="login">
+              Entrar <FaArrowRight />
+            </Link>
+          </li>
+        ) : (
+          <li className={styles.auth_button}>
+            <button onClick={() => signOut()}>
+              Sair <FaArrowRight />
+            </button>
+          </li>
+        )}
       </ul>
 
       <IoMenuSharp
