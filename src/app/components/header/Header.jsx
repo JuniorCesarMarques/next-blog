@@ -9,8 +9,6 @@ import { motion } from "framer-motion";
 const Header = ({ session }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const image = session?.user?.image;
-
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
   };

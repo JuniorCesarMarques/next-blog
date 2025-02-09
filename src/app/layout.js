@@ -23,7 +23,6 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession();
-  console.log(session)
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

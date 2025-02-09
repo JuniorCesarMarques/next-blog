@@ -12,12 +12,14 @@ import { motion } from "framer-motion";
 import { signOut } from "next-auth/react";
 
 const Navbar = ({ handleMenuToggle, isOpen, session }) => {
-  const { image } = session?.user || {};
+  const picture = session
+    ? session?.user?.image
+    : "https://autobrothers.com.br/images/navbar/profile-img.png";
 
   return (
     <nav className={styles.container}>
       <div className={styles.logo_container}>
-        <img src={image} alt="foto do perfil" />
+        <img src={picture} alt="foto do perfil" />
         <span>Brothers</span>
       </div>
 
