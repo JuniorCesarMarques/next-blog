@@ -1,6 +1,6 @@
 import styles from "./privacyPolicy.module.css";
 
-const page = () => {
+const PrivacyPolicy = () => {
   return (
     <div className={styles.page}>
       <h1 className={styles.title}>Política de Privacidade</h1>
@@ -90,7 +90,7 @@ const page = () => {
           Se tiver dúvidas ou preocupações sobre nossa política de privacidade,
           entre em contato conosco pelo e-mail{" "}
           <a href="mailto:contato@seusite.com" className={styles.link}>
-            contato@seusite.com
+            contato@autobrothers.com.br
           </a>
           .
         </p>
@@ -99,4 +99,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PrivacyPolicy;

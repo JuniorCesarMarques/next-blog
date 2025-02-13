@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+    --background-color: rgb(8, 8, 8);
     --black-color: rgb(16, 16, 16);
     --dark-red: rgb(22, 6, 6);
+    --cards-color: rgb(38, 38, 38);
     --gray-color: rgb(142, 142, 142);
     --main-color: rgb(229, 9, 20);
     --secondary-color: rgb(128, 5, 11);
@@ -16,7 +18,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    font-family: "Poppins", serif;
+    /* border: 1px solid white; */
 }
 
 a {
@@ -25,5 +28,7 @@ a {
 }
 
 .main-container {
+    margin-top: 90px;
     min-height: 90vh;
+    background: var(--background-color);
 }

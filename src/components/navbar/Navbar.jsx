@@ -3,29 +3,29 @@
 import styles from "./Navbar.module.css";
 
 import { IoMenuSharp } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa";
 
 import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
-const Navbar = ({ handleMenuToggle, isOpen, session }) => {
-  const picture = session
-    ? session?.user?.image
+const Navbar = ({ handleMenuToggle, isOpen }) => {
+  const { data, status } = useSession();
+
+  const picture = data
+    ? data?.user?.image
     : "https://autobrothers.com.br/images/navbar/profile-img.png";
 
   return (
     <nav className={styles.container}>
-      <div className={styles.logo_container}>
-        <img src={picture} alt="foto do perfil" />
-        <span>Brothers</span>
-      </div>
+      <img src={picture} alt="foto do perfil" />
 
       <ul className={styles.options_menu}>
         <li>
-          <Link href="/">Artigos</Link>
+          <Link href="/posts">Artigos</Link>
         </li>
         <li>
           <Link href="videos">Videos</Link>
@@ -36,19 +36,21 @@ const Navbar = ({ handleMenuToggle, isOpen, session }) => {
       </ul>
 
       <ul className={styles.auth_menu}>
-        {session === null && (
+        {status === "unauthenticated" && (
           <li className={styles.auth_button}>
             <Link href="register">Criar conta</Link>
           </li>
         )}
 
-        {session === null ? (
+        {status === "unauthenticated" && (
           <li className={styles.auth_button}>
             <Link href="login">
               Entrar <FaArrowRight />
             </Link>
           </li>
-        ) : (
+        )}
+
+        {status === "authenticated" && (
           <li className={styles.auth_button}>
             <button onClick={() => signOut()}>
               Sair <FaArrowRight />
@@ -57,10 +59,17 @@ const Navbar = ({ handleMenuToggle, isOpen, session }) => {
         )}
       </ul>
 
-      <IoMenuSharp
-        className={styles.menu_hamburguer}
-        onClick={handleMenuToggle}
-      />
+      {isOpen ? (
+        <IoClose
+          className={styles.menu_hamburguer}
+          onClick={handleMenuToggle}
+        />
+      ) : (
+        <IoMenuSharp
+          className={styles.menu_hamburguer}
+          onClick={handleMenuToggle}
+        />
+      )}
 
       <motion.ul
         className={styles.mobile_options_menu}

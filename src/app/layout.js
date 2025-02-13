@@ -1,10 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 
-import { getServerSession } from "next-auth";
+import AuthProvider from "@/providers/AuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,13 +22,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const session = await getServerSession();
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <Header session={session} />
+        <AuthProvider>
+          <Header />
           <main className="main-container">{children}</main>
           <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
