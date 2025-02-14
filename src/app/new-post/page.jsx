@@ -12,6 +12,8 @@ const NewPost = () => {
     // Aqui você enviaria para o backend
   };
 
+  let test = "test";
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Criar um novo post</h2>
