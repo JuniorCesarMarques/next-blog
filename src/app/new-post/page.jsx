@@ -3,7 +3,7 @@
 import { useState } from "react";
 import TextEditor from "@/components/text-editor/TextEditor";
 
-const newPost = () => {
+const NewPost = () => {
   const [postContent, setPostContent] = useState("");
 
   const handleSubmit = (e) => {
@@ -21,4 +21,4 @@ const newPost = () => {
   );
 };
 
-export default newPost;
+export default NewPost;
