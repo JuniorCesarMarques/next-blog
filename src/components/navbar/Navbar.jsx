@@ -17,7 +17,7 @@ const Navbar = ({ handleMenuToggle, isOpen }) => {
 
   const picture = data
     ? data?.user?.image
-    : "https://autobrothers.com.br/images/navbar/profile-img.png";
+    : "http://localhost:3000/images/profile-img.png";
 
   return (
     <nav className={styles.container}>
@@ -44,7 +44,7 @@ const Navbar = ({ handleMenuToggle, isOpen }) => {
 
         {status === "unauthenticated" && (
           <li className={styles.auth_button}>
-            <Link href="login">
+            <Link href="/login">
               Entrar <FaArrowRight />
             </Link>
           </li>

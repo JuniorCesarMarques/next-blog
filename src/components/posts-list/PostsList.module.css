@@ -1,3 +1,39 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.details {
+    display: flex;
+    gap: 10px;
+    font-size: var(--font-size);
+}
+
+.category {
+    color: var(--secondary-color);
+}
+
+.card_container {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+.info_container {
     color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info_container a {
+    background: var(--color-button);
+    width: 100px;
+    color: var(--black-color);
+    text-align: center;
+}
+
+.body {
+    font-size: var(--font-size);
 }

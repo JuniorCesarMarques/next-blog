@@ -1,6 +1,7 @@
 .page {
     font-family: "Poppins", serif;
     display: flex;
+    background: var(--white-color);
 }
 
 .auth_section {

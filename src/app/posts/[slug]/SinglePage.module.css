@@ -1,0 +1,18 @@
+.page {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userTextContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--font-size);
+}
+
+.userTextContainer img {
+    border-radius: 50%;
+    height: 30px;
+}

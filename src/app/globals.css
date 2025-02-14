@@ -28,7 +28,7 @@ a {
 }
 
 .main-container {
-    margin-top: 90px;
+    padding: 120px 120px 0;
     min-height: 90vh;
     background: var(--background-color);
 }

@@ -1,0 +1,7 @@
+.title {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
