@@ -17,7 +17,7 @@ const Navbar = ({ handleMenuToggle, isOpen }) => {
 
   const picture = data
     ? data?.user?.image
-    : "http://localhost:3000/images/profile-img.png";
+    : `${process.env.NEXT_PUBLIC_API_URL}/images/profile-img.png`;
 
   return (
     <nav className={styles.container}>
