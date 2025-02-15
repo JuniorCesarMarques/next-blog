@@ -21,7 +21,7 @@ const CategoryList = async () => {
       {data?.map((category) => (
         <div className={styles.card_container} key={category.id}>
           <img
-            src={`/images/categories${category.img}`}
+            src={`/images/categories/${category.img}`}
             alt={category.title}
           />
           <h1>{category.title}</h1>

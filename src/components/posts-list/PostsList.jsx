@@ -31,7 +31,7 @@ const PostsList = async ({ page, cat }) => {
     <div className={styles.container}>
       {posts?.map((post) => (
         <div className={styles.card_container} key={post.id}>
-          <img src={`/images/posts-list${post.img}`} alt="" />
+          <img src={`/images/posts-list/${post.img}`} alt="" />
           <div className={styles.info_container}>
             <div className={styles.details}>
               <span className={styles.date}>
